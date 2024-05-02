@@ -1,0 +1,192 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+#relevance {
+    width: 1280px;
+    height: 720px;
+    position: relative;
+    background-color: transparent;
+}
+#ember {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, 
+    #FF0000 0%,       /* Solid red at the bottom */
+    rgba(255, 87, 51, 0.4) 5%,    /* Reddish tone with transparency */
+    rgba(255, 169, 51, 0.3) 50%,   /* Orange with transparency */
+    rgba(255, 209, 51, 0.2) 75%,   /* Brighter orange with transparency */
+    rgba(255, 236, 51, 0.2) 100%  /* Yellow with transparency */
+  );
+    z-index: 10;
+    opacity: 0;
+}
+#notification {
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%, 0);
+    background-color: transparent;
+    opacity: 0;
+}
+.show {
+    animation: 1s linear 1 forwards show,
+    1s linear 9s 1 forwards leave;
+}
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes leave {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+#noti-title {
+    text-align: center;
+    font-size: 40px;
+    color: gold;
+}
+#noti-image {
+    width: 100%;
+    text-align: center;
+    margin: 12px 0;
+}
+#alert-image {
+    width: 20%;
+    aspect-ratio: 1/1;
+    margin: 0 auto;
+    background-color: gray;
+}
+#subscriber-area {
+    width: 40%;
+    height: 30%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(15%, -20%);
+    background-color: transparent;
+}
+#follower-area {
+    width: 40%;
+    height: 30%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-20%, -20%);
+}
+#subscriber-rel, #follower-rel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.person-pic {
+    background-color: gray;
+    display: block;
+    border: 5px solid orange;
+    border-image: url("https://media.istockphoto.com/id/648646470/photo/the-surface-of-the-lava-background.jpg?s=612x612&w=0&k=20&c=Ca_CkZmyYpH_89lUgVmEeWC5EaGx8yeT9dSlMrCjeHc=");
+    border-image-slice: 44%;
+    
+    
+    z-index: 11;
+}
+#subscriber-pic {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 120px;
+    left: 30px;
+}
+#follower-pic {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 120px;
+    right: 30px;
+}
+.fire {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+}
+#subscriber, #follower {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 0 2%;
+}
+.fire-border {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url("https://cdnb.artstation.com/p/assets/images/images/015/228/385/large/paul-newman-lava-texture.jpg?1547570436");
+    background-size: cover;
+    border-radius: 30%;
+}
+.fire-content {
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    background: url("https://media.istockphoto.com/id/648646470/photo/the-surface-of-the-lava-background.jpg?s=612x612&w=0&k=20&c=Ca_CkZmyYpH_89lUgVmEeWC5EaGx8yeT9dSlMrCjeHc=");
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    border-radius: 30%;
+}
+.person {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: rgb(191, 138, 14);
+}
+.person-title {
+    margin-top: 5%;
+}
+.person-name {
+    color: gainsboro;
+    font-size: 26px;
+    padding: 0 5px;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/*CHAT */
+#chat {
+    height: 500px;
+    width: 300px;
+    position: absolute;
+    right: 5px;
+    top: 150px;
+    padding: 10px;
+}
+.server {
+    font-size: 20px;
+    color: gray;
+    animation: leave 1s linear 5s 1 forwards;
+}
+.message {
+    margin: 12px 10px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: white;
+    animation: leave 1s linear 9s 1 forwards;
+}
+
+.message > .user {
+    margin-right: 5px;
+}

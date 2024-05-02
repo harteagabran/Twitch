@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMBN Layout</title>
+
+    <link rel="stylesheet" href="./layout.css">
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@700&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/db0a1cbb74.js" crossorigin="anonymous"></script>
+    <script src="../../../bower_components/angular/angular.js"></script>
+    <script src="../../../bower_components/ngFitText/dist/ng-FitText.min.js"></script>
+    <script src="../view-ctrl.js"></script>
+</head>
+<body ng-app="Layout" ng-controller="viewCtrl">
+    <div id="notification">
+        <div id="alert-holder">
+            <div id="result-box">
+                <h2 id="get-data">GET DATA</h2>
+                <div id=alert-person>
+                    <div id="alert-type">
+                        {{alerts.type | uppercase}}
+                    </div>
+                    <div id="noti-person" data-fittext="0.8">
+                    {{alerts.name}}
+                    </div>
+                </div>
+                <h2 id="press-btn">Press <b id="A-btn" class="game-btn blink">A</b> Button</h2>
+                <div id="img-hold">
+                    <img  id="alert-img" src="{{alerts.pic}}">
+                    <canvas id="pic-reveal" width="70" height="70"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main id="relevance">
+        <div id="streamer-title" class="container">
+            <h2 id="name" data-fittext="0.5">{{broadcaster.name}}</h2>
+        </div>
+        <div id="game-screen" class="container"></div>
+        <div id="cam" class="container">
+            <div id="img-holder">
+                <img id="streamer-img" src="{{broadcaster.pic}}" width="100" height="100">
+            </div>
+            </div>
+        <div id="stats" class="container">
+            <embed id="chat" src="https://chat.restream.io/embed?token=9825f542-ed3f-48f3-9ba3-c4638499f5ca"></embed>
+        </div>
+        <div id="info" class="container">
+            <div id="toggle-list">
+                <div class="active"><img src="{{subscriber.pic}}" width="60" height="60"><h2>Recent Subscriber: {{subscriber.name}}</h2></div>
+                <div class="list"><img src="{{follower.pic}}" width="60" height="60"><h2>Recent Follower: {{follower.name}}</h2></div>
+                <div class="list" ng-repeat="soc in socials track by $index"><h2 id="{{soc.type}}-icon" class="soc-icon {{soc.class}}"></h2><h2>{{soc.name}}</h2></div>
+            </div>
+        </div>
+    </main>
+    <br>
+    <p style="color: red;">NOTE: the title of the notification is determined by the websocket so it won't change based on the buttons</p>
+    <audio id="winner-theme" src="../../audio/theme/mmbnWinner.mp3">
+    </audio>
+    <audio id="got-sound" src="../../audio/alert/gotItem.WAV"></audio>
+
+    <script src="../../components/particle/squarereveal.js"></script>
+    <script src="./layout.js"></script>
+    <script src="../../components/layout-tester.js"></script>
+</body>
+</html>

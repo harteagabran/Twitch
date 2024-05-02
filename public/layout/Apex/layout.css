@@ -1,0 +1,337 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: transparent;
+}
+#relevance {
+    position: relative;
+    height: 720px;
+    width: 1280px;
+    background-color: transparent;   
+    overflow: hidden;
+}
+#hp-bar {
+    position: absolute;
+    top: 612px;
+    left: 13px;
+    width: 296px;
+    height: 77px;
+    filter: brightness(1.75);
+}
+#chat {
+    width: 150px;
+    height: 500px;
+    position: absolute;
+    right: 50px;
+    top: 100px;
+}
+.message {
+    margin: 12px 10px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: white;
+}
+.message > .user {
+    margin-right: 5px;
+}
+/* ALERT
+   BOX
+*/
+#notification {
+    width: 450px;
+    height: 100px;
+    position: absolute;
+    left: 30%;
+    top: -100px;
+    z-index: 2;
+}
+#alert-holder {
+    background: url('../../img-components/apx\ alert.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-origin: border-box;
+    width: 100%;
+    height: 100%;
+    display: flex;  
+    justify-content: space-around;
+    align-items: baseline;
+}
+#alert-image {  
+    width: 23%;
+    margin-left: 3%;
+    clip-path: polygon(7% 3px, 67% 3px, 100% 97.5%, 29% 97.5%, 1% 19%);
+    flex-grow: 0;
+}
+#alert-message {
+    color: white;
+    margin-right: 10%;
+    text-align: center;
+    font-size: 24px;
+    flex-grow: 2;
+    align-self: center;
+    overflow: hidden;
+}
+.celebrate {
+    color: rgb(125, 214, 0);
+}
+.view {
+    color: rgb(190, 22, 219);
+}
+.alert-play {
+    animation: appear 2s linear 2 alternate;
+    animation-delay: 1s;
+}
+@keyframes appear {
+    from {
+        top: -100px;
+    }
+    10% {
+        top: 20%;
+    }
+    to {
+        top: 20%;
+    }
+}
+/* HEADER
+   FOR
+   APEX
+*/
+#head-container {
+    width: inherit;
+    height: 12%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+#broadcaster {
+    position: relative;
+    flex-basis: 10%;
+    background-color: rgb(4, 0, 214);
+    margin: 0 -2.2%;
+    z-index: 0;
+    clip-path: polygon(
+        7% 0,
+        93% 0,
+        100% 24%,
+        100% 100%,
+        0 100%,
+        0 24%
+    );
+}
+#br-image {
+
+    height: 100%;
+    width: 100%;
+    clip-path: polygon(
+        2% 24%,
+        98% 24%,
+        75% 85%,
+        80% 96%,
+        20% 96%,
+        25% 85%
+    );
+}
+#br-filter {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#name {
+    position: absolute;
+    top: 0;
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+}
+/* CONTAINERS
+   FOLLOWERS
+   SUBSCRIBERS
+*/
+#follower {
+    background-color: #4682B4;
+}
+#subscriber {
+    background-color: #3D59AB;
+}
+#broadcaster-pic {
+    display: block;
+    width: 150%;
+    height: 200%;
+    transform: translate(-13%, 0);
+}
+
+/* if no data found */
+#follower.missing ,
+#subscriber.missing {
+    background-color: dimgray;
+}
+
+/* positioning */
+.apx-container {
+    height: 100%;
+    width: 25%;
+    flex-basis: 1 0 30%;
+    position: relative;
+    z-index: 1;
+}
+.apx-border {
+    position: absolute;
+    left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	clip-path: polygon(
+	  6% 0,
+	  61% 0,
+	  64% 24%,
+	  91% 24%,
+	  100% 84%,
+	  98% 100%,
+	  9% 100%,
+	  2% 51%,
+	  1% 51%,
+	  0 39%
+	);
+}
+.apx-box {
+    position: absolute;
+    top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	clip-path: polygon(
+	  6% 26%,
+	  91% 26%,
+	  98% 80%,
+	  96% 96%,
+	  12% 96%,
+	  4% 39%
+	);
+}
+.apx-cntnt {
+    background: url("https://wallpaperaccess.com/full/2909124.jpg");
+    background-color: gray;
+    background-size: cover;
+    position: absolute;
+    top: 26%;
+    left: 4%;
+    height: 70%;
+    width: 94%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.profile {
+    display: block;
+    max-width: 40%;
+    max-height: 120%;
+    width: auto;
+    height: 120%;
+}
+.usr-name {
+    color: white;
+    margin: 0 5%;
+    text-align: center;
+    font-size: 30px;
+    flex: 1 1 100%;
+}
+.apx-title {
+    position: absolute;			 width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 10%;
+    color: white;
+    font-size: 18px;
+}
+/* flip stuff */
+.flip {
+    transform: scaleX(-1);
+}
+.flip > .apx-box > .apx-cntnt > .profile,
+.flip > .apx-box > .apx-cntnt > .usr-name,
+.flip > .apx-title{
+    transform: scaleX(-1);
+}
+.flip > .apx-title {
+    text-align: right;
+}
+
+
+/* SOCIAL CONTAINER
+   FACEBOOK
+   YOUTUBE
+   TWITTER
+   DISCORD */
+.social {
+    background: url("https://cdn-s3.sappi.com/s3fs-public/Apex_0.jpg");
+    background-size: cover;
+    background-color: black;
+    border-radius: 0 12px 6px 0;
+    font-size: 18px;
+    padding: 3px 2px;
+    box-shadow: 5px 10px;
+    display: flex;
+    justify-content: flex-start;
+    flex: 1 1 20%;
+}
+.fab {
+    flex-basis: 25px;
+    margin-right: 10px;
+}
+/* individual icons coloring */
+.fa-facebook-square {
+    color: #3b5998;
+}
+.fa-twitter-square {
+    color: #00acee;
+}
+.fa-discord {
+    color: #5865F2;
+}
+.fa-youtube {
+    color: #C4302B;
+}
+/* username color */
+.username {
+    color: white;
+}
+
+/* positioning */
+#social-container {
+    position: absolute;
+    left: 0;
+    bottom: 11px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 7%;
+}
+
+/* individual containers */
+#facebook {
+    border-top: 5px solid #3b5998; 
+    border-right: 5px solid #3b5998;
+    border-left: 5px solid #3b5998;
+}
+#twitter {
+    border-top: 5px solid #00acee; 
+    border-right: 5px solid #00acee;
+    border-left: 5px solid #00acee;
+}
+#discord {
+    border-top: 5px solid #5865F2; 
+    border-right: 5px solid #5865F2;
+    border-left: 5px solid #5865F2;
+}
+#youtube {
+    border-top: 5px solid #C4302B; 
+    border-right: 5px solid #C4302B;
+    border-left: 5px solid #C4302B;
+}

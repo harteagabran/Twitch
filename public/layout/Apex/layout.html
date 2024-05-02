@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Layout</title>
+
+    <link rel="stylesheet" href="./layout.css">
+
+    <script src="https://kit.fontawesome.com/db0a1cbb74.js" crossorigin="anonymous"></script>
+    <script src="../../../bower_components/angular/angular.js"></script>
+    <script src="../../../bower_components/ngFitText/dist/ng-FitText.min.js"></script>
+    <script src="../view-ctrl.js"></script>
+</head>
+<body ng-app="Layout">
+    <main id="relevance" ng-controller="viewCtrl">
+        <div id="hp-bar">
+            <img src="../img-components/Diddy HP Bar.png" width="296px" height="77">
+        </div>
+        <div id="notification">
+            <div id="alert-holder">
+                <img id="alert-image" src="{{alerts.pic}}" width="100" height="100">
+            <div id="alert-message" data-fittext></div>
+            </div>
+        </div>
+        <div id="head-container">
+            <div class="apx-container">
+                <div id="follower" class="apx-border"></div>
+                <div class="apx-box">
+                    <div class="apx-cntnt">
+                        <img id="follow_img" class="profile" src="{{follower.pic}}" height="100" width="100">
+                        <h1 id="current_follower" class="usr-name"data-fittext="1.7">{{follower.name}}</h1>
+                    </div>
+                </div>
+            
+            <h2 class="apx-title">RECENT FOLLOW</h2>
+        </div>
+        <div id="broadcaster">
+            <h1 id="name">{{broadcaster.name}}</h1>
+            <div id="br-image"><img id="broadcaster-pic" src="{{broadcaster.pic}}" width="120" height="86"></div>
+        </div>
+        <div class="apx-container flip">
+            <div id="subscriber" class="apx-border"></div>
+            <div class="apx-box">
+                <div class="apx-cntnt">
+                    <img id="subscriber-img" class="profile" src="{{subscriber.pic}}" height="100" width="100">
+                    <h1 id="current_subscriber" class="usr-name" data-fittext="1.7">{{subscriber.name}}</h1>
+                </div>
+            </div>
+            <h2 class="apx-title">RECENT SUB</h2>
+        </div>
+    </div>
+    <div id="chat"></div>
+    </main>
+    <audio id="alert-sound" src="../../audio/alert/gotItem.WAV" controls="none"></audio>
+    <script src="./layout.js"></script>
+    <script src="../../components/layout-tester.js"></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+#relevance {
+    width: 1280px;
+    height: 720px;
+    background-color: transparent;
+    position: relative;
+}
+#brb {
+    font-family: 'Bungee Spice', sans-serif;
+    position: absolute;
+    top: 233px;
+    color: navy;
+    text-align: center;
+    font-size: 40px;
+    z-index: 9;
+}
+#stars, #stars-brb {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(48,27,66,1) 0%,rgba(48,27,66,1) 35%,rgba(31,136,242,1) 250%);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 50% 50%;
+}
+#clouds, #clouds-brb {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: block;
+    background: transparent url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat top center;
+    z-index: 3;
+    animation: move-clouds-back 200s linear infinite;
+}
+
+@keyframes move-clouds-back {
+    from {background-position: 0 0;}
+    to {background-position: 10000px 0;}
+}
+
+#screen {
+    background-color: #22ff00;
+    aspect-ratio: 16 / 9;
+    position: absolute;
+    z-index: 4;
+    width: 70%;
+    height: 90%;
+    top: 5%;
+    left: 3%;
+    opacity: 0;
+}
+#clouds, #stars {
+    clip-path: polygon(
+        0% 0%,
+        0% 100%,
+        1% 100%,
+        1% 1%,
+        75% 1%,
+        75% 99%,
+        1% 99%,
+        1% 100%,
+        100% 100%,
+        100% 0%
+    );
+}
+
+#main-area {
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0;
+    left: 75%;
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    color: white;
+}
+
+#img-hold {
+    text-align: center;
+}
+
+#subscriber-area, #follower-area {
+    text-align: center;
+    margin-left: 8px;
+    padding-top: 3px;
+}
+#subscriber-rel, #follower-rel {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+#follower-pic, #subscriber-pic {
+    display: block;
+}
+.title {
+    color: maroon;
+    font-size: 15px;
+}
+.person-name {
+    font-size: 24px;
+    margin-left: 15px;
+    line-height: 32px;
+}
+#chat {
+    flex-grow: 1;
+    background-color: black;
+    background-blend-mode: darken;
+}
+
+#notification {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    opacity: 0;
+}
+#img-holder {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border: 5px solid lightskyblue;
+    border-radius: 10px;
+    top: 20%;
+    left: calc(50% - 50px);
+}
+#alert-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#img-holder:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-repeat: no-repeat;
+    opacity: 1;
+    background-image: url("https://assets.codepen.io/13471/sparkles.gif");
+    background-position: 50% 50%;
+    background-size: 160%;
+    background-blend-mode: overlay;
+    filter: brightness(1) contrast(1);
+    mix-blend-mode: color-dodge;
+}
+#noti-write-holder {
+    position: absolute;
+    width: 50%;
+    left: 25%;
+    top: 350px;
+    height: 100px;
+}
+#fireworks {
+    width: 100%;
+    height: 100%;
+}
+#mario {
+    position: absolute;
+    bottom:30px;
+    left: 500px;
+    height: 300px;
+}
+.show {
+    animation: 1s linear 1 forwards show,
+    1s linear 9s 1 forwards leave;
+}
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes leave {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.user {
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 14px;
+}

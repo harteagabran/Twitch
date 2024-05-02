@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMB Wonder Layout</title>
+    
+    <link rel="stylesheet" href="./layout.css">
+
+    <script src="https://kit.fontawesome.com/db0a1cbb74.js" crossorigin="anonymous"></script>
+    <script src="../../../bower_components/angular/angular.js"></script>
+    <script src="../../../bower_components/ngFitText/dist/ng-FitText.min.js"></script>
+    <script src="../view-ctrl.js"></script>
+    
+</head>
+<body ng-app="Layout" >
+    <main id="relevance" ng-controller="viewCtrl">
+        <div id="stars"></div>
+        <div id="clouds"></div>
+        <div id="screen"></div>
+        <div id="notification">
+            <div id="img-holder">
+                <img id="alert-img" src="{{alerts.pic}}" />
+            </div>
+            <canvas id="fireworks"></canvas>
+            <div id="noti-write-holder">
+              <canvas id="notification-write"></canvas>
+            </div>
+            <img id="mario" src="../../img-components/mariodance.gif" />
+        </div>
+        <div id="main-area">
+            
+            <div id="img-hold">
+                <h2>KumarNT</h2>
+                <img src="{{broadcaster.pic}}" width="100" height="100" />
+            </div>
+            <hr/>
+            <div id="subscriber-area" ng-hide="subscriber.name == 'default'">
+                <h4 class="title">Subscriber</h4>
+                <div id="subscriber-rel">
+                    <img src="{{subscriber.pic}}" id="subscriber-pic" height="40" width="40" />
+                    <h3 id="sub-name" class="person-name">{{subscriber.name}}</h3>
+                </div>
+            </div>
+            <hr/>
+            <div id="follower-area">
+                <h4 class="title">Follower</h4>
+                <div id="follower-rel">
+                    <img src="{{follower.pic}}" id="follower-pic" width="40" height="40"/>
+                    <h3 id="follow-name" class="person-name">{{follower.name}}</h3>
+                </div>
+            </div>
+            <hr/>
+            <embed id="chat" src="https://chat.restream.io/embed?token=9825f542-ed3f-48f3-9ba3-c4638499f5ca"></embed>
+        </div>
+    </main>
+    <!-- Audio -->
+    <audio id="mario-talk" src="../../audio/alert/mario-just what I needed.mp3"></audio>
+    <audio id="lucky" src="../../audio/alert/PaperMario Lucky.mp3"></audio>
+    <audio id="stage-clear" src="../../audio/theme/Mario Bros Stage Clear.mp3"></audio>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="../../components/particle/stars.js"></script>
+    <script src="../../components/particle/handwrite.js"></script>
+    <script src="./layout.js"></script>
+    <script src="../../components/layout-tester.js"></script>
+
+    <!-- jsDelivr  -->
+    <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.x/dist/index.umd.js"></script>
+
+    <!-- UNPKG -->
+    <script src="https://unpkg.com/fireworks-js@2.x/dist/index.umd.js"></script>
+    <script>
+        const container = document.getElementById("fireworks");
+        const fireworks = new Fireworks.default(container);
+        fireworks.start();
+    </script>
+</body>
+</html>

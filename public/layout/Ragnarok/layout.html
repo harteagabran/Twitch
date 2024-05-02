@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOW Layout</title>
+    
+    <link rel="stylesheet" href="./layout.css">
+
+    <script src="https://kit.fontawesome.com/db0a1cbb74.js" crossorigin="anonymous"></script>
+    <script src="../../../bower_components/angular/angular.js"></script>
+    <script src="../../../bower_components/ngFitText/dist/ng-FitText.min.js"></script>
+    <script src="../view-ctrl.js"></script>
+    
+</head>
+<body ng-app="Layout" >
+    <main id="relevance" ng-controller="viewCtrl">
+        <div id="ember"></div>
+        <div id="notification">
+            <h1 id="noti-title">{{alerts.type | uppercase}}</h1>
+            <div id="noti-image">
+                <img id="alert-image" class="person-pic" src="{{alerts.pic}}">
+            </div>
+            <canvas id="notification-write"></canvas>
+        </div>
+        <div id="subscriber-area">
+            <div id="subscriber-rel">
+                <img id="subscriber-pic" class="person-pic" src="{{subscriber.pic}}"/>
+                <canvas class="fire"></canvas>
+                <div id="subscriber">
+                    <div class="fire-border">
+                        <div class="fire-content person">
+                            <h4 class="person-title">Subscriber</h4>
+                            <h1 id="sub-name" class="person-name" data-fittext="4">{{subscriber.name}}</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="follower-area">
+            <div id="follower-rel">
+                <img id="follower-pic" class="person-pic" src="{{follower.pic}}"/>
+                <canvas class="fire"></canvas>
+                <div id="follower">
+                    <div class="fire-border">
+                        <div class="fire-content person">
+                            <h4 class="person-title">Follower</h4>
+                            <h1 id="follow-name" class="person-name" data-fittext="4">{{follower.name}}</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <audio id="alert-theme" src="../../audio/theme/rageOfSparta.mp3"></audio>
+    <script src="../../components/particle/fire.js"></script>
+    <script src="../../components/particle/handwrite.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="../../components/particle/ember.js"></script>
+    <script src="./layout.js"></script>
+    <script src="../../components/layout-tester.js"></script>
+</body>
+</html>
