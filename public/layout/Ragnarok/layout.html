@@ -18,9 +18,9 @@
     <main id="relevance" ng-controller="viewCtrl">
         <div id="ember"></div>
         <div id="notification">
-            <h1 id="noti-title">{{alerts.type | uppercase}}</h1>
+            <h1 id="noti-title"></h1>
             <div id="noti-image">
-                <img id="alert-image" class="person-pic" src="{{alerts.pic}}">
+                <img id="alert-image" class="person-pic" src="#">
             </div>
             <canvas id="notification-write"></canvas>
         </div>
@@ -58,6 +58,7 @@
     <script src="../../components/particle/handwrite.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="../../components/particle/ember.js"></script>
+    <script src="../AlertQueue.js"></script>
     <script src="./layout.js"></script>
     <script src="../../components/layout-tester.js"></script>
 </body>

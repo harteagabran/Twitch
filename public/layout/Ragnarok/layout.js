@@ -1,8 +1,10 @@
 //alert
 var noti = document.getElementById("notification");
+var title = document.getElementById("noti-title");
+var picture = document.getElementById("alert-image");
 var song = document.getElementById("alert-theme");
 var ember = document.getElementById("ember");
-var txt;
+var txt, alertQueue;
 //Canvases
 var FireCanvases = document.getElementsByClassName("fire");
 var notiCanvas = document.getElementById("notification-write");
@@ -15,6 +17,10 @@ var notiWrite;
 
 //alert
 function layoutAlert(type = "follower", event = {}) {
+    //populate
+    title.textContent = type.toUpperCase();
+    picture.src = event.pic;
+
     //toggle classes
     noti.classList.remove("show");
     ember.classList.remove("show");
@@ -51,6 +57,8 @@ function layoutAlert(type = "follower", event = {}) {
 
 //Initialization
 function init() {
+    alertQueue  = new AlertQueue(10500);
+
     //call Particles and resize
     for(let make = 0; make < FireCanvases.length; make++) {
         var system = new FireSystem(20, 3, 15, 20);

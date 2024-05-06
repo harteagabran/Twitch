@@ -107,7 +107,9 @@ app.controller('viewCtrl', ['$scope', 'socket', function($scope, socket) {
             $scope.update(data);
             $scope.alert(data);
             $scope.$digest();
-            layoutAlert($scope.alerts.type, data);
+            //add to queue, and let queue handle alerts
+            alertQueue.enqueue($scope.alerts.type, data);
+            //layoutAlert($scope.alerts.type, data);
         }
     });
 }]);

@@ -1,9 +1,11 @@
 //alert
 var noti = document.getElementById("notification");
+var picture = document.getElementById("alert-img");
 var txt;
 var jingle = document.getElementById("lucky");
 var marioSnd = document.getElementById("mario-talk");
 var song = document.getElementById("stage-clear");
+var alertQueue;
 //Canvas
 var notiCanvas = document.getElementById("notification-write");
 
@@ -12,6 +14,9 @@ var notiWrite;
 
 //Alert (order is important)
 function layoutAlert(type = "follower", event = {}) {
+    //populate
+    picture.src = event.pic;
+
     //Class toggle management
     noti.classList.remove("show");
     noti.offsetWidth;
@@ -52,6 +57,8 @@ function layoutAlert(type = "follower", event = {}) {
 
 //Initialization
 function init() {
+    alertQueue = new AlertQueue(10500);
+
     notiWrite = new HandWrite("Alert is ready!", "blue", 25);
     notiWrite.resize(notiCanvas);
     requestAnimationFrame(animate);

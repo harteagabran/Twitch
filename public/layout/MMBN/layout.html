@@ -24,15 +24,13 @@
                 <h2 id="get-data">GET DATA</h2>
                 <div id=alert-person>
                     <div id="alert-type">
-                        {{alerts.type | uppercase}}
                     </div>
-                    <div id="noti-person" data-fittext="0.8">
-                    {{alerts.name}}
+                    <div id="noti-person" data-fittext="0.3">
                     </div>
                 </div>
                 <h2 id="press-btn">Press <b id="A-btn" class="game-btn blink">A</b> Button</h2>
                 <div id="img-hold">
-                    <img  id="alert-img" src="{{alerts.pic}}">
+                    <img  id="alert-img" src="#">
                     <canvas id="pic-reveal" width="70" height="70"></canvas>
                 </div>
             </div>
@@ -59,13 +57,12 @@
             </div>
         </div>
     </main>
-    <br>
-    <p style="color: red;">NOTE: the title of the notification is determined by the websocket so it won't change based on the buttons</p>
     <audio id="winner-theme" src="../../audio/theme/mmbnWinner.mp3">
     </audio>
     <audio id="got-sound" src="../../audio/alert/gotItem.WAV"></audio>
 
     <script src="../../components/particle/squarereveal.js"></script>
+    <script src="../AlertQueue.js"></script>
     <script src="./layout.js"></script>
     <script src="../../components/layout-tester.js"></script>
 </body>

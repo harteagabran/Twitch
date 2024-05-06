@@ -1,9 +1,12 @@
 //alert
 var noti = document.getElementById('notification');
+var title = document.getElementById('alert-type');
+var alertname = document.getElementById('noti-person');
+var picture = document.getElementById("alert-img");
 var song = document.getElementById('winner-theme');
 var sound = document.getElementById('got-sound');
 var aBtn = document.getElementById('A-btn');
-var firstInfo;
+var firstInfo, alertQueue;
 //canvas
 var canvas = document.getElementById("pic-reveal");
 const TIME = 6000;
@@ -14,6 +17,11 @@ var sys = new SquareReveal(7, 4);
 
 //Alert
 function layoutAlert(type = "follower", event = {}) {
+    //populate
+    title.textContent = type.toUpperCase();
+    picture.src = event.pic;
+    alertname.textContent = event.name;
+
     //make button blink
     aBtn.classList.add('blink');
 
@@ -79,6 +87,9 @@ var songFadeOut = function() {
 
 //Initialize
 function init() {
+    //start queue
+    alertQueue = new AlertQueue(9000);
+
     //first info child
     firstInfo = document.getElementsByClassName('active')[0];
 

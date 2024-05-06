@@ -21,25 +21,26 @@ const raidbtn = document.getElementById("alert-raid");
 const cheerbtn = document.getElementById("alert-cheer");
 testData = {
   name: 'TestUser',
+  pic: 'https://3.bp.blogspot.com/_vBCSLbKJ7nI/TOHHto6tFhI/AAAAAAAAF78/3qWGXEa6BLg/w1200-h630-p-k-no-nu/mmbn2.jpg',
   tier: 2,
   viewers: 100,
   bits: 69
 }
 //AddEventListener
 followbtn.addEventListener('click', function() {
-  layoutAlert('follower', testData);
+  alertQueue.enqueue('follower', testData);
 });
 subbtn.addEventListener('click', function() {
-  layoutAlert('subscriber', testData);
+  alertQueue.enqueue('subscriber', testData);
 });
 messbtn.addEventListener('click', function() {
   messageData = { ...testData };
-  messageData.message = { text: "A smaple message" };
-  layoutAlert('subscriber', messageData);
+  messageData.message = { text: "A sample message" };
+  alertQueue.enqueue('subscriber', messageData);
 });
 raidbtn.addEventListener('click', function() {
-  layoutAlert('raider', testData);
+  alertQueue.enqueue('raider', testData);
 });
 cheerbtn.addEventListener('click', function() {
-  layoutAlert('cheerer', testData);
+  alertQueue.enqueue('cheerer', testData);
 });

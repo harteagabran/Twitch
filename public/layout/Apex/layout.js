@@ -1,11 +1,14 @@
 //Notifications and Audio
 var noti = document.getElementById("notification");
 var sound = document.getElementById("alert-sound");
+var picture = document.getElementById("alert-img");
 var messArea = document.getElementById("alert-message");
 var txt;
 
 //Alert call
 function layoutAlert( type = "follower", event = {}) {
+    //update picture
+    picture.src = event.pic;
     //alert messages
     if(type == "follower") {
         txt = '<b class="celebrate">' + event.name + '</b> is following!';
@@ -36,3 +39,10 @@ function layoutAlert( type = "follower", event = {}) {
     sound.currentTime = 0;
     sound.play();
 }
+
+function init() {
+    //alertQueue
+    alertQueue = new AlertQueue(4500);
+}
+
+window.onload = init();

@@ -58,7 +58,7 @@ body {
     justify-content: space-around;
     align-items: baseline;
 }
-#alert-image {  
+#alert-img {  
     width: 23%;
     margin-left: 3%;
     clip-path: polygon(7% 3px, 67% 3px, 100% 97.5%, 29% 97.5%, 1% 19%);
@@ -81,7 +81,6 @@ body {
 }
 .alert-play {
     animation: appear 2s linear 2 alternate;
-    animation-delay: 1s;
 }
 @keyframes appear {
     from {

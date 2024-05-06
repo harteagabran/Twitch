@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ace Attorney</title>
+
+    <link rel="stylesheet" href="./layout.css">
+
+    <script src="https://kit.fontawesome.com/db0a1cbb74.js" crossorigin="anonymous"></script>
+    <script src="../../../bower_components/angular/angular.js"></script>
+    <script src="../../../bower_components/ngFitText/dist/ng-FitText.min.js"></script>
+    <script src="../view-ctrl.js"></script>
+</head>
+<body ng-app="Layout">
+    <main id="relevance" ng-controller="viewCtrl">
+        <!-- Notification -->
+        <div id="notification">
+            <img id="objection" class="hide" src="../../img-components/objection.png" />
+            <img id="phoenix" class="hide" src="../../img-components/Phoenix Wright Point.gif"/>
+            <img id="alert-img" class="hide" src="#" />
+            <div id="alert-message" class="hide">
+                Your Honor! <b class="celebrate">Someone</b> just! <b class="hightlight">Wow!</b>
+            </div>
+        </div>
+        <!-- Marquee -->
+        <div id="marquee">
+            <div id="marquee-1">
+                <ul>
+                    <li><h3>Follower: </h3><img id="follower-pic" class="user-pic" src="{{follower.pic}}" width="20" height="20" /><h3 class="follow-name">{{follower.name}}</h3></li>
+                    <li><h3>Subscriber:</h3><img id="subscriber-pic" class="user-pic" src="{{subscriber.pic}}" width="20" height="20" /><h3 class="follow-name">{{subscriber.name}}</h3></li>
+                    <li ng-repeat="soc in socials track by $index"><i id="{{soc.type}}-icon" class="soc-icon {{soc.class}}"></i><h3>{{soc.name}}</h3> </li>
+                </ul>
+            </div>
+            <div id="marquee-2">
+                <ul>
+                    <li><h3>Follower:</h3><img id="follower-pic" class="user-pic" src="{{follower.pic}}" width="20" height="20" /><h3 class="follow-name">{{follower.name}}</h3></li>
+                    <li><h3>Subscriber:</h3><img id="subscriber-pic" class="user-pic" src="{{subscriber.pic}}" width="20" height="20" /><h3 class="follow-name">{{subscriber.name}}</h3></li>
+                    <li ng-repeat="soc in socials track by $index"><i id="{{soc.type}}-icon" class="soc-icon {{soc.class}}"></i><h3>{{soc.name}}</h3> </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <audio id="alert-sound" src="../../audio/alert/objection.mp3" controls="none"></audio>
+    <audio id="alert-theme" src="../../audio/theme/PW - Cornered.mp3" controls="none"></audio>
+    <script src="../AlertQueue.js"></script>
+    <script src="./layout.js"></script>
+    <script src="../../components/layout-tester.js"></script>
+</body>
+</html>
