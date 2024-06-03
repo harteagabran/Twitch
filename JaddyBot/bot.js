@@ -1,7 +1,13 @@
+const dotenv = require('dotenv');
+const path = require('path');
 const tmi = require('tmi.js');
 const express = require('express');
 const { WebSocketServer } = require('ws');
 const Joke = require('one-liner-joke');
+
+// Specify the path to the .env file
+const envPath = path.resolve(__dirname, '..', '.env');
+dotenv.config({ path: envPath });
 
 //Express App
 const app = express();
@@ -44,11 +50,11 @@ wss.on('connection', function connection(ws) {
 //configuration options
 const opts = {
     identity: {
-        username: 'JaddyDoge',
-        password: 'oauth:2huowjpuhxea9cmss62n4jncjpa9sf'
+        username: process.env.USERNAME,
+        password: process.env.PASSWORD
     },
     channels: [
-        'KumarNT'
+        process.env.CHANNEL
     ]
 };
 
